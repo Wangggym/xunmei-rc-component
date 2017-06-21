@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import { message, Form } from 'antd'
 import { webApi } from '../../__share'
 //******************************************** */
-//      modal弹出框逻辑请求高阶控件
+//      modal弹出框逻辑、请求高阶控件
 //******************************************** */
 function modeWrapper(getUrl, postOrPutUrl) {
     return function (model) {
         class FormComponent extends React.Component {
             constructor(props) {
-                super(props);
+                super(props)
                 this.state = {
                     visible: false,
                     loading: false,
@@ -141,9 +141,9 @@ function modeWrapper(getUrl, postOrPutUrl) {
             extraValue: PropTypes.object,           //附加需要提交的数据，或者是在修改时显示数据
             disabled: PropTypes.bool,               //组件是否禁用，在传入自定义按钮样式时需要同样传入该属性
 
-            //************************扩展方法可在父级组件处控制modal的显示与隐藏 */
+            //*************************扩展方法可在父级组件处控制modal的显示与隐藏 */
             onOff: PropTypes.bool,                  //当前显示隐藏状态
-            changeOnOff: PropTypes.object,          //与父组件双向绑定回传参数
+            changeOnOff: PropTypes.func,          //与父组件双向绑定回传参数
         }
         return Form.create()(FormComponent)
     }
