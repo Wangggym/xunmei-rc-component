@@ -7,7 +7,7 @@ function App() {
   return (
     <div style={{ margin: 100 }}>
       <h1>AntDesign Demo</h1>
-      <EmailToDoList />
+        <EmailToDoList />
     </div>
   );
 }
